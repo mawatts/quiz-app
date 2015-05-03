@@ -5,35 +5,32 @@ $(document).ready(function() {
  var currentQuestion = 0;
  var numberQuestions = 0;
  var currentAnswer;
+ var currentID;
 
  //Determine answer selected on click and store value
  $(".buttons").click(function(){
+  currentID = $(this).attr('id');
   if ($(this).is('#option1')) {
    currentAnswer = $(this).val();
-   alert(currentAnswer);
   }
   else if ($(this).is('#option2')) {
    currentAnswer = $(this).val();
-   alert(currentAnswer);
   }
   else if ($(this).is('#option3')) {
    currentAnswer = $(this).val();
-   alert(currentAnswer);
   }
   else {
    currentAnswer = $(this).val();
-   alert(currentAnswer);
   }
  });
-   
- //Submit answer, update score, and load next question on button click
+
  $("#submit").click(function(){
-  currentQuestion++;
-  nextQuestion();
+  submitAnswer(currentID);
   updateScore();
+  nextQuestion();
  });
 
- function nextQuestion() {
+function nextQuestion() {
   if (currentQuestion < numberQuestions) {
    $("#question").text(questions[currentQuestion]);
    $("#option1").val(choices[currentQuestion][0]);
@@ -43,13 +40,27 @@ $(document).ready(function() {
   }
  }
 
- function submitAnswer() {
-
+ function submitAnswer(currentID) {
+  //Submit answer, update score, and load next question on button click
+  if (typeof currentID == "undefined") {
+   alert("You need to select an answer to be able to go to the next question!");
+  }
+  else {
+   
+  }
  }
 
- function updateScore() {
-
- }
+ /*function updateScore() {
+  if (currentAnswer == answers[currentQuestion]) {
+   currentQuestion++;
+   numberCorrect++;
+   $(".quizStatus").text(numberCorrect + " out of " + numberQuestions + " Correct");
+  }
+  else {
+   currentQuestion++;
+  }
+  alert(currentQuestion);
+ }*/
 
  var questions = new Array();
  var choices = new Array();
@@ -62,7 +73,7 @@ $(document).ready(function() {
  choices[0][0] = "the same as Java";
  choices[0][1] = "kind of like Java";
  choices[0][2] = "different than Java";
- choices[0][3] = "ther written part of Java";
+ choices[0][3] = "the written part of Java";
  answers[0] = choices[0][2];
 
  questions[1] = "2) JavaScript is ...";
