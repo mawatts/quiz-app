@@ -1,49 +1,26 @@
 /* ====== CSS GRID SYSTEM ====== */
 
-/* SECTIONS */
-
-.section {
- clear: both;
- padding: 0px;
- margin: 0px;
-}
-
-/* GROUPING */
-
-
-.group:before,
-.group:after {
- content:"";
- display:table;
-}
-
-.group:after {
- clear:both;
-}
-
-.group {
- zoom:1; /* For IE 6/7 (trigger hasLayout) */
-}
-
 /* GRID COLUMN SETUP */
 .container {
  width : 100%;
- max-width : 1200px; 
+ max-width : 950px; 
+ text-align: center;
+ margin: 0 auto;
 }
 
 .col {
  display: block;
  float:left;
- margin: 1% 0 1% 1.6%;
+ margin: 1% 1% 1% 1%;
+ background-color: #4FB954;
+ border: 1px solid;
 }
-
-.col:first-child { margin-left: 0; } /* all browsers except IE6 and lower */
 
 /* REMOVE MARGINS AS ALL GO FULL WIDTH AT 480 PIXELS */
 
 @media only screen and (max-width: 480px) {
  .col { 
-  margin: 1% 0 1% 0%;
+  margin: 1%;
  }
 }
 
@@ -60,29 +37,25 @@
 
 @media only screen and (max-width: 480px) {
  .span_2_of_2 {
-  width: 100%; 
+  width: 95.6%; 
  }
 
  .span_1_of_2 {
   width: 100%; 
  }
-
- #aButton {
-  width: 75%;
- }
 }
 
 /* GRID OF THREE */
 .span_3_of_3 {
- width: 100%; 
+ width: 95.6%; 
 }
 
 .span_2_of_3 {
- width: 66.13%; 
+ width: 70.8%; 
 }
 
 .span_1_of_3 {
- width: 32.26%; 
+ width: 30.26%; 
 }
 
 /* GO FULL WIDTH AT LESS THAN 480 PIXELS */
@@ -99,14 +72,11 @@
  .span_1_of_3 {
   width: 100%;
  }
-
- .span_1_of_3 > img {width: 65%;}
-
 }
 
 /* GRID OF FOUR */
 .span_4_of_4 {
- width: 100%; 
+ width: 95.6%; 
 }
 
 .span_3_of_4 {
@@ -114,20 +84,17 @@
 }
 
 .span_2_of_4 {
- width: 49.2%; 
+ width: 46.8%; 
 }
 
 .span_1_of_4 {
- width: 23.8%; 
+ width: 22.8%; 
 }
 
 
 /* GO FULL WIDTH AT LESS THAN 480 PIXELS */
 
 @media only screen and (max-width: 480px) {
- .container {
-  text-align: center;
- }
 
  .span_4_of_4 {
   width: 100%; 
@@ -143,7 +110,6 @@
 
  .span_1_of_4 {
   width: 100%;
-  text-align: center; 
  }
  
  #qNumber {
@@ -153,6 +119,10 @@
 }
 
 /* ====== END CSS GRID SYSTEM ====== */
+
+body {
+background-color: #7D68C5;
+}
 
 img {
  width: 100%;
