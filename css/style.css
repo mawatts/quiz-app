@@ -16,14 +16,6 @@
  border: 1px solid;
 }
 
-/* REMOVE MARGINS AS ALL GO FULL WIDTH AT 480 PIXELS */
-
-@media only screen and (max-width: 480px) {
- .col { 
-  margin: 1%;
- }
-}
-
 /* GRID OF TWO */
 .span_2_of_2 {
  width: 100%;
@@ -33,18 +25,6 @@
 .span_1_of_2 {
  width: 49.2%;
  height: 50px;
-}
-
-/* GO FULL WIDTH AT LESS THAN 480 PIXELS */
-
-@media only screen and (max-width: 480px) {
- .span_2_of_2 {
-  width: 95.6%;
- }
-
- .span_1_of_2 {
-  width: 100%; 
- }
 }
 
 /* GRID OF THREE */
@@ -61,22 +41,6 @@
 .span_1_of_3 {
  width: 30.26%;
  height: 50px;
-}
-
-/* GO FULL WIDTH AT LESS THAN 480 PIXELS */
-
-@media only screen and (max-width: 480px) {
- .span_3_of_3 {
-  width: 100%; 
- }
-
- .span_2_of_3 {
-  width: 100%; 
- }
-
- .span_1_of_3 {
-  width: 100%;
- }
 }
 
 /* GRID OF FOUR */
@@ -100,11 +64,36 @@
  height: 50px;
 }
 
-
-/* GO FULL WIDTH AT LESS THAN 480 PIXELS */
+/* REMOVE MARGINS AND GO FULL WIDTH AT LESS THAN 480 PIXELS */
 
 @media only screen and (max-width: 480px) {
+  .col { 
+  margin: 1%;
+ }
 
+ /* GRID OF TWO */
+ .span_2_of_2 {
+  width: 95.6%;
+ }
+
+ .span_1_of_2 {
+  width: 100%; 
+ }
+
+/* GRID OF THREE */
+ .span_3_of_3 {
+  width: 100%; 
+ }
+
+ .span_2_of_3 {
+  width: 100%; 
+ }
+
+ .span_1_of_3 {
+  width: 100%;
+ }
+
+/* GRID OF FOUR */
  .span_4_of_4 {
   width: 100%; 
  }
@@ -121,29 +110,65 @@
   width: 100%;
  }
  
+ span.col.span_1_of_4.qCounter {
+  background-size: 30% !important;
+  padding-top: 35px !important;
+  height: 95px !important;
+ }
+
  #qNumber {
   width: 23.8%;
  }
-}
 
+ #logo {
+    width: 100% !important;
+  }
+}
 /* ====== END CSS GRID SYSTEM ====== */
 
 body {
-background-color: #7D68C5;
+background: url("../images/computer.jpg") no-repeat center center;
 }
 
 #logo {
  width: 70.8%;
  display: block;
-  float: left;
-  margin: 1% 1% 1% 1%;
+ float: left;
+ margin: 1% 1% 1% 1%;
+ height: 160px;
+}
+
+#logo > a > img {
+  height: 160px;
+  width: auto;
+}
+
+.qCounter {
+ font-weight: bold;
+ font-size: 60px;
 }
 
 span.col.span_4_of_4 {
   padding-top: 28px;
 }
 
-.col.span_1_of_3.prevQuestion, .col.span_1_of_3.quizStatus, span.col.span_1_of_4.qCounter {
+.col.span_1_of_3.prevQuestion, .col.span_1_of_3.quizStatus {
   padding-top: 15px;
   height: 33px;
+}
+
+span.col.span_1_of_4.qCounter {
+  padding-top: 50px;
+  height: 110px;
+  background: url("../images/green-circle-button.png") no-repeat center center;
+  background-color: transparent;
+  background-size: 75%;
+  border: hidden;
+}
+
+@media only screen and (max-width: 630px) {
+  #logo {
+    height: 160px;
+    width: 480px;
+  }
 }
