@@ -4,10 +4,33 @@ $(document).ready(function() {
  var numberCorrect = 0;
  var currentQuestion = 0;
  var numberQuestions = 0;
-    
+ var currentAnswer;
+
+ //Determine answer selected on click and store value
+ $(".buttons").click(function(){
+  if ($(this).is('#option1')) {
+   currentAnswer = $(this).val();
+   alert(currentAnswer);
+  }
+  else if ($(this).is('#option2')) {
+   currentAnswer = $(this).val();
+   alert(currentAnswer);
+  }
+  else if ($(this).is('#option3')) {
+   currentAnswer = $(this).val();
+   alert(currentAnswer);
+  }
+  else {
+   currentAnswer = $(this).val();
+   alert(currentAnswer);
+  }
+ });
+   
+ //Submit answer, update score, and load next question on button click
  $("#submit").click(function(){
   currentQuestion++;
   nextQuestion();
+  updateScore();
  });
 
  function nextQuestion() {
@@ -18,6 +41,14 @@ $(document).ready(function() {
    $("#option3").val(choices[currentQuestion][2]);
    $("#option4").val(choices[currentQuestion][3]);
   }
+ }
+
+ function submitAnswer() {
+
+ }
+
+ function updateScore() {
+
  }
 
  var questions = new Array();
