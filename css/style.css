@@ -27,17 +27,19 @@
 /* GRID OF TWO */
 .span_2_of_2 {
  width: 100%;
+ height: 50px;
 }
 
 .span_1_of_2 {
  width: 49.2%;
+ height: 50px;
 }
 
 /* GO FULL WIDTH AT LESS THAN 480 PIXELS */
 
 @media only screen and (max-width: 480px) {
  .span_2_of_2 {
-  width: 95.6%; 
+  width: 95.6%;
  }
 
  .span_1_of_2 {
@@ -47,15 +49,18 @@
 
 /* GRID OF THREE */
 .span_3_of_3 {
- width: 95.6%; 
+ width: 95.6%;
+ height: 50px;
 }
 
 .span_2_of_3 {
- width: 70.8%; 
+ width: 70.8%;
+ height: 50px;
 }
 
 .span_1_of_3 {
- width: 30.26%; 
+ width: 30.26%;
+ height: 50px;
 }
 
 /* GO FULL WIDTH AT LESS THAN 480 PIXELS */
@@ -76,19 +81,23 @@
 
 /* GRID OF FOUR */
 .span_4_of_4 {
- width: 95.6%; 
+ width: 95.6%;
+ height: 50px;
 }
 
 .span_3_of_4 {
- width: 74.6%; 
+ width: 74.6%;
+ height: 50px;
 }
 
 .span_2_of_4 {
- width: 46.8%; 
+ width: 46.8%;
+ height: 50px;
 }
 
 .span_1_of_4 {
- width: 22.8%; 
+ width: 22.8%;
+ height: 50px;
 }
 
 
@@ -115,7 +124,6 @@
  #qNumber {
   width: 23.8%;
  }
-
 }
 
 /* ====== END CSS GRID SYSTEM ====== */
@@ -124,8 +132,18 @@ body {
 background-color: #7D68C5;
 }
 
-img {
- width: 100%;
- height: auto;
- overflow: hidden;
+#logo {
+ width: 70.8%;
+ display: block;
+  float: left;
+  margin: 1% 1% 1% 1%;
+}
+
+span.col.span_4_of_4 {
+  padding-top: 28px;
+}
+
+.col.span_1_of_3.prevQuestion, .col.span_1_of_3.quizStatus, span.col.span_1_of_4.qCounter {
+  padding-top: 15px;
+  height: 33px;
 }

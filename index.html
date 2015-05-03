@@ -15,16 +15,16 @@
   <div class="container">
    <div class="header">
     <div class="row">
-      <ul>
-        <li><div class="col span_2_of_3"><a href="index.html"><img id="logo" src="images/nerdQuizLogo.png" alt="logo"></a></div></li>
-        <li><span class="col span_1_of_4">0</span></li>
-      </ul>     
+      <div>
+       <a href="index.html"><img id="logo" src="images/nerdQuizLogo.png" alt="logo"></a>
+      </div>
+      <span class="col span_1_of_4 qCounter">Current Question: 10</span>   
     </div>
    </div>
 
    <div class="section group question">
     <div class="row">
-     <div class="col span_4_of_4">Would you like to take a Nerdy Quiz to test your knowledge in all things Geek?</div>
+     <span class="col span_4_of_4">Would you like to take a Nerdy Quiz to test your knowledge in all things Geek?</span>
     </div>
    </div>
 
@@ -43,9 +43,9 @@
 
    <div class="section group buttons">
     <div class="row">
-     <div class="col span_1_of_3">Last Question: Incorrect</div>
-     <div class="col span_1_of_3">SUBMIT</div>
-     <div class="col span_1_of_3">8 out of 10 Correct</div>
+     <div class="col span_1_of_3 prevQuestion">Last Question: Incorrect</div>
+     <input class="col span_1_of_3" type="button" value="SUBMIT">
+     <div class="col span_1_of_3 quizStatus">8 out of 10 Correct</div>
     </div>
    </div>
   </div>
