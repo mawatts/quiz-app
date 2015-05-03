@@ -25,7 +25,7 @@ $(document).ready(function() {
  });
 
  $("#submit").click(function(){
-  submitAnswer(currentID);
+  //submitAnswer(currentID);
   updateScore();
   nextQuestion();
  });
@@ -59,7 +59,13 @@ function nextQuestion() {
   else {
    currentQuestion++;
   }
-  alert(currentQuestion);
+
+  if (currentQuestion < numberQuestions) {
+   $(".qCounter").text(currentQuestion+1);
+  }
+  else {
+   alert("Final Score: " + numberCorrect);
+  }
  }
 
  var questions = new Array();
