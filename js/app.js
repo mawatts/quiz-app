@@ -40,7 +40,7 @@ function nextQuestion() {
   }
  }
 
- function submitAnswer(currentID) {
+ /*function submitAnswer(currentID) {
   //Submit answer, update score, and load next question on button click
   if (typeof currentID == "undefined") {
    alert("You need to select an answer to be able to go to the next question!");
@@ -48,9 +48,9 @@ function nextQuestion() {
   else {
    
   }
- }
+ }*/
 
- /*function updateScore() {
+ function updateScore() {
   if (currentAnswer == answers[currentQuestion]) {
    currentQuestion++;
    numberCorrect++;
@@ -60,7 +60,7 @@ function nextQuestion() {
    currentQuestion++;
   }
   alert(currentQuestion);
- }*/
+ }
 
  var questions = new Array();
  var choices = new Array();
