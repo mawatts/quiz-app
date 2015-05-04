@@ -130,6 +130,10 @@ body {
 background: url("../images/computer.jpg") no-repeat center center;
 }
 
+#reset {
+  display: none;
+}
+
 #logo {
  width: 70.8%;
  display: block;

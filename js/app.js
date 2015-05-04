@@ -37,6 +37,10 @@ $(document).ready(function() {
    $("#option3").val(choices[currentQuestion][2]);
    $("#option4").val(choices[currentQuestion][3]);
   }
+  else {
+   $("#submit").css("display", "none");
+   $("#reset").css("display", "inline");
+  }
   currentID = "";
  }
 
@@ -47,7 +51,13 @@ $(document).ready(function() {
    nextQuestion();
   }
   else {
-   alert("You need to select an answer to be able to go to the next question!");
+   swal({
+    title: "",
+    text: "You need to select an answer to be able to go to the next question!",
+    type: "warning",
+    confirmButtonText: "Close",
+    confirmButtonColor: "#4FB954"
+   });
   }
  }
 
@@ -68,9 +78,25 @@ $(document).ready(function() {
    $(".qCounter").text(currentQuestion+1);
   }
   else {
-   alert("Final Score: " + numberCorrect);
+   swal({
+    title: "Final Score:",
+    text: numberCorrect + " out of " + numberQuestions + " Correct",
+    type: "success",
+    confirmButtonColor: "#4FB954"
+   });
   }
  }
+
+ $("#reset").click(function(){
+  numberCorrect = 0;
+  currentQuestion = 0;
+  $("#reset").css("display", "none");
+  $("#submit").css("display", "inline");
+  $(".prevQuestion").text("Last Question: N/A");
+  $(".quizStatus").text("No Correct Answers");
+  $(".qCounter").text(currentQuestion+1);
+  nextQuestion();
+ });
 
  var questions = new Array();
  var choices = new Array();
