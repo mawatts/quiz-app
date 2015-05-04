@@ -25,12 +25,11 @@ $(document).ready(function() {
  });
 
  $("#submit").click(function(){
-  //submitAnswer(currentID);
-  updateScore();
-  nextQuestion();
+  submitAnswer();
  });
 
-function nextQuestion() {
+ //Add next question and answers from array
+ function nextQuestion() {
   if (currentQuestion < numberQuestions) {
    $("#question").text(questions[currentQuestion]);
    $("#option1").val(choices[currentQuestion][0]);
@@ -38,26 +37,31 @@ function nextQuestion() {
    $("#option3").val(choices[currentQuestion][2]);
    $("#option4").val(choices[currentQuestion][3]);
   }
+  currentID = "";
  }
 
- /*function submitAnswer(currentID) {
+ function submitAnswer() {
   //Submit answer, update score, and load next question on button click
-  if (typeof currentID == "undefined") {
-   alert("You need to select an answer to be able to go to the next question!");
+  if (currentID == "option1" || currentID == "option2" || currentID == "option3" || currentID == "option4") {
+   updateScore();
+   nextQuestion();
   }
   else {
-   
+   alert("You need to select an answer to be able to go to the next question!");
   }
- }*/
+ }
 
  function updateScore() {
+  var removeID = $(typeof currentID);
   if (currentAnswer == answers[currentQuestion]) {
    currentQuestion++;
    numberCorrect++;
    $(".quizStatus").text(numberCorrect + " out of " + numberQuestions + " Correct");
+   $(".prevQuestion").text("Last Question: Correct");
   }
   else {
    currentQuestion++;
+   $(".prevQuestion").text("Last Question: Incorrect");
   }
 
   if (currentQuestion < numberQuestions) {
